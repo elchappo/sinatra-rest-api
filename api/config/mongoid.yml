@@ -1,0 +1,6 @@
+production:
+  clients:
+    default:
+      database: social
+      hosts: ["<%= ENV['MONGODB_ADDRESS'] || 'mongodb'%>:27017"]
+      

@@ -1,0 +1,29 @@
+version: '2'
+
+services:
+  api:
+    build: ./api
+    container_name: api
+    command: bundle exec ruby api.rb
+    ports:
+      - '8080:4567'
+    links:
+      - mongodb
+    environment:
+      - RAILS_ENV=production
+      - RACK_ENV=production
+    networks:
+        - dev_network
+    restart: always
+  mongodb:
+    image: mongo:latest
+    container_name: mongodb
+    ports:
+      - '27017:27017'
+    networks:
+        - dev_network
+    restart: always
+
+networks:
+  dev_network:
+    driver: bridge  
