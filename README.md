@@ -3,7 +3,7 @@
 
 `git clone git@github.com:noren/sinatra-rest-api.git`
 
-2. start docker inside project directory 
+2. start docker inside project directory (tested on version 1.8.0)
 
 `cd sinatra-rest-api && docker-compose up`
 
